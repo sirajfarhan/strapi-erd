@@ -23,7 +23,7 @@ jobs:
           yarn install
       - name: Production Build
         run: |
-          BACKEND_URL=${{ secrets.BACKEND_URL }} yarn build
+          REACT_APP_BACKEND_URL=${{ secrets.BACKEND_URL }} yarn build
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@master
         with:

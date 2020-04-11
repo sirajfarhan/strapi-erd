@@ -7,7 +7,7 @@ import * as constants  from './constants';
 
 function introspectionProvider() {
     return new Promise(async (resolve, reject) => {
-        const introspection = await fetch(`${process.env.BACKEND_URL}/graphql`, {
+        const introspection = await fetch(`${process.env.REACT_APP_BACKEND_URL}/graphql`, {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ query: constants.introspectionQuery }),
