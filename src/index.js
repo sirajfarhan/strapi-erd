@@ -12,7 +12,7 @@ function introspectionProvider() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ query: constants.introspectionQuery }),
         }).then(response => response.json());
-        introspection.data.__schema.types[0].fields = introspection.data.__schema.types[0].fields.filter(field => field.name === 'user');
+        introspection.data.__schema.types[0].fields = introspection.data.__schema.types[0].fields.filter(field => field.name === 'self');
         introspection.data.__schema.types = introspection.data.__schema.types.map(type => {
             if(type.name === 'UploadFile') {
                 type.fields = type.fields.filter(field => field.name !== 'related')
