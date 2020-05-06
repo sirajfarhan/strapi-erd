@@ -21,6 +21,8 @@ function introspectionProvider() {
         });
         let introspectionString = JSON.stringify(introspection);
         introspectionString = introspectionString.replace(/UsersPermissionsUser/g,"User");
+        introspectionString = introspectionString.replace(/UsersPermissionsRole/g,"Role");
+        introspectionString = introspectionString.replace(/UsersPermissionsPermission/g,"Permission");
         return resolve(JSON.parse(introspectionString))
     });
 }
